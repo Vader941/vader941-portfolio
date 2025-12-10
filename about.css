@@ -1,0 +1,58 @@
+/* about.css — About page specific styles */
+
+.about-hero {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.about-title {
+  font-size: clamp(1.8rem, 3.2vw + .5rem, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 .3rem;
+}
+
+.about-tagline {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, .6vw + .8rem, 1.25rem);
+}
+
+.about-intro {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.about-portrait {
+  width: clamp(160px, 26vw, 220px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Skills grid */
+.about-skills { padding: 1rem 0 2rem; }
+.skills-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.skills-grid li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.skills-grid h3 { margin: 0 0 .35rem; }
+
+@media (min-width: 760px){
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Goals */
+.about-goals { padding: 0 0 2.5rem; }
+.goals-list { margin: .25rem 0 0 1.2rem; }
+.goals-list li { margin: .25rem 0; }

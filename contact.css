@@ -1,0 +1,142 @@
+.contact-main {
+  padding-bottom: 3rem;
+}
+
+.contact-hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.contact-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.2rem, 3.5vw + 1rem, 3rem);
+  font-weight: 800;
+}
+
+.contact-tagline {
+  margin: 0;
+  max-width: auto;
+  color: var(--muted);
+}
+
+.contact-info-section {
+  padding: 2rem 0 1rem;
+}
+
+.contact-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.contact-card {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(28, 37, 57, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 22px rgba(56, 189, 248, 0.55),
+    0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+.contact-card h2 {
+  margin: 0 0 0.5rem;
+}
+
+.contact-card a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-form-section {
+  padding: 2rem 0 0;
+}
+
+.contact-form-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  background: rgba(15, 23, 42, 0.75);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #2d3b59;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+.contact-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--brand);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.contact-button:hover {
+  opacity: 0.9;
+}
+
+.contact-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+}

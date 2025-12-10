@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Stack — Nathan Able</title>
+  <meta name="description" content="Languages, tools, and workflows I use to build projects." />
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="tech.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <button class="menu-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="tech.html" aria-current="page">Tech</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="tech-main">
+    <!-- Hero / intro -->
+    <section class="tech-hero">
+      <div class="container">
+        <h1 class="tech-title">Tech Stack & Workflow</h1>
+        <p class="tech-tagline">
+          Good projects are more than code snippets. They come from choosing the right tools,
+          understanding how they fit together, and using them in a way that stays readable when
+          someone opens the repo a year later.
+        </p>
+        <p>
+          This page gives a high-level view of the languages, tools, and platforms I use most often.
+          It is not meant to be a buzzword dump. These are the technologies that actually show up in
+          my projects and classwork, from basic HTML layouts to full-stack apps deployed to the cloud.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core languages -->
+    <section class="tech-section">
+      <div class="container">
+        <h2 class="tech-section-title">Core Languages</h2>
+        <p class="tech-section-intro">
+          The foundations I reach for when building the front end of a site, experimenting with
+          logic, or automating small tasks.
+        </p>
+
+        <div class="tech-grid">
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="html5.svg" alt="HTML5 logo" class="tech-logo">
+              <div>
+                <h3>HTML</h3>
+                <p class="tech-pill">Structure & accessibility</p>
+              </div>
+            </div>
+            <p>
+              I focus on semantic markup, meaningful headings, and screen-reader friendly layouts.
+              Most of my projects start with clean HTML before any styling or JavaScript is added.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="css3.svg" alt="CSS3 logo" class="tech-logo">
+              <div>
+                <h3>CSS</h3>
+                <p class="tech-pill">Layout & design systems</p>
+              </div>
+            </div>
+            <p>
+              I rely on Flexbox and Grid for layout, keep colors and spacing in CSS variables, and
+              aim for responsive designs that behave well from mobile through desktop.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="javascript.svg" alt="JavaScript logo" class="tech-logo">
+              <div>
+                <h3>JavaScript</h3>
+                <p class="tech-pill">Interactivity & logic</p>
+              </div>
+            </div>
+            <p>
+              From DOM manipulation to API calls and simple game loops, JavaScript is where most of
+              the interactivity in my projects lives. I prefer small, focused modules over giant files.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="python.svg" alt="Python logo" class="tech-logo">
+              <div>
+                <h3>Python</h3>
+                <p class="tech-pill">Scripting & backend practice</p>
+              </div>
+            </div>
+            <p>
+              I use Python for scripting, data-heavy exercises, and backend prototypes. It shows up
+              in projects like my Sudoku game and lab tooling for pipette calibration.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frameworks & libraries -->
+    <section class="tech-section">
+      <div class="container">
+        <h2 class="tech-section-title">Frameworks & Libraries</h2>
+        <p class="tech-section-intro">
+          Tools that help me move faster while staying in control of what the code is actually doing.
+        </p>
+
+        <div class="tech-grid">
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="react.svg" alt="React logo" class="tech-logo">
+              <div>
+                <h3>React</h3>
+                <p class="tech-pill">Component-based interfaces</p>
+              </div>
+            </div>
+            <p>
+              I use React with Vite when I need stateful interfaces, such as the Visual Daily
+              Scheduler concept. I aim for clear component boundaries and predictable data flow.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="vite.svg" alt="Vite logo" class="tech-logo">
+              <div>
+                <h3>Vite</h3>
+                <p class="tech-pill">Fast dev tooling</p>
+              </div>
+            </div>
+            <p>
+              Vite gives me quick builds and a smooth dev experience when working with modern
+              JavaScript or React projects, especially those I plan to grow over time.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="nodejs.svg" alt="Node.js logo" class="tech-logo">
+              <div>
+                <h3>Node.js</h3>
+                <p class="tech-pill">APIs & tooling</p>
+              </div>
+            </div>
+            <p>
+              I use Node.js for small backend services, build scripts, and working with APIs like
+              OpenWeather, TMDB, NASA, and OpenAI.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platforms & DevOps-ish -->
+    <section class="tech-section">
+      <div class="container">
+        <h2 class="tech-section-title">Platforms & Hosting</h2>
+        <p class="tech-section-intro">
+          Where my projects live and how I keep API keys and deployments under control.
+        </p>
+
+        <div class="tech-grid">
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="github.svg" alt="GitHub logo" class="tech-logo">
+              <div>
+                <h3>Git & GitHub</h3>
+                <p class="tech-pill">Version control</p>
+              </div>
+            </div>
+            <p>
+              I use Git for branching, commits, and pull requests, with GitHub as my primary place
+              for collaboration, issues, and project documentation.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="cloudflare.svg" alt="Cloudflare logo" class="tech-logo">
+              <div>
+                <h3>Cloudflare Workers</h3>
+                <p class="tech-pill">Secure API proxies</p>
+              </div>
+            </div>
+            <p>
+              I proxy external APIs (NASA, OpenWeather, OpenAI, TMDB) through Workers so keys stay
+              server-side and the browser never sees sensitive credentials.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="render.svg" alt="Render logo" class="tech-logo">
+              <div>
+                <h3>Render</h3>
+                <p class="tech-pill">Full-stack deployment</p>
+              </div>
+            </div>
+            <p>
+              Render hosts my full-stack projects, including Node/Express backends and Vite-built
+              frontends, keeping everything in one place with simple deploys.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow tools -->
+    <section class="tech-section">
+      <div class="container">
+        <h2 class="tech-section-title">Everyday Workflow</h2>
+        <p class="tech-section-intro">
+          The tools that make it realistic to balance school, projects, and experiments without
+          losing track of what I am doing.
+        </p>
+
+        <div class="tech-grid">
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="vscode.svg" alt="VS Code logo" class="tech-logo">
+              <div>
+                <h3>Visual Studio Code</h3>
+                <p class="tech-pill">Primary editor</p>
+              </div>
+            </div>
+            <p>
+              VS Code is where I spend most of my time: linting, formatters, Git integration, and
+              extensions tuned for web development and Python work.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="chrome.png" alt="Chrome DevTools logo" class="tech-logo">
+              <div>
+                <h3>Chrome DevTools</h3>
+                <p class="tech-pill">Debugging & performance</p>
+              </div>
+            </div>
+            <p>
+              I use DevTools for layout inspection, network requests, performance checks, and
+              testing how interfaces respond at different screen sizes.
+            </p>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <img src="notion.svg" alt="Notion or notes logo" class="tech-logo">
+              <div>
+                <h3>Planning & Notes</h3>
+                <p class="tech-pill">Task tracking</p>
+              </div>
+            </div>
+            <p>
+              Simple task lists and project notes help me keep school assignments, portfolio ideas,
+              and long-term experiments moving in the right direction.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* =========================================================
+   home.css — Home page specific styles (bold statement update)
+   ========================================================= */
+
+/* ===== Hero layout (bold statement style) ===== */
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+.hero .container {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  color: var(--text);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.5vw + 0.4rem, 1.5rem);
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+}
+
+/* On larger screens, place text and portrait side-by-side */
+@media (min-width: 820px) {
+  .hero .container {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3.5rem;
+    text-align: left;
+    justify-items: stretch;
+  }
+  .hero-content {
+    order: 1;
+  }
+  .face-compare {
+    justify-self: end;
+  }
+}
+
+/* =========================================================
+   Circular before/after portrait
+   ========================================================= */
+.face-compare {
+  width: clamp(240px, 45vw, 420px);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--border);
+  box-shadow: var(--shadow);
+
+  --reveal: 50%;
+  --top-y: 20%;
+  --bottom-y: 40%;
+  touch-action: none;
+}
+
+.face-compare .img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.face-compare .img-bottom {
+  object-position: 50% var(--bottom-y);
+}
+
+.face-compare .img-top {
+  object-position: 50% var(--top-y);
+  clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+  transition: clip-path 60ms linear;
+}
+
+.face-compare .handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--reveal);
+  width: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transform: translateX(-1px);
+}
+
+.face-compare .slider {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.face-compare .slider:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .face-compare .img-top {
+    transition: none;
+  }
+}

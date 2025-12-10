@@ -1,0 +1,351 @@
+/* ================================================
+   projects.css — Projects grid and modal styling
+   ================================================ */
+
+/* Basic layout */
+.projects-main {
+  padding-bottom: 3rem;
+}
+
+.projects-intro {
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.projects-intro .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.projects-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.projects-tagline {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+/* Grid */
+.projects-grid-section {
+  padding: 0 1rem 2.5rem;
+}
+
+.projects-grid-section .container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+/* Cards */
+.project-card {
+  position: relative;
+  background-color: #0f172a; 
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+/* Text colors on dark cards */
+.project-card-body {
+  color: #f9fafb;
+}
+
+.project-card-body .project-name {
+  color: #f9fafb;
+}
+
+.project-card-body .project-tagline {
+  color: #e5e7eb;
+}
+
+.project-card-body .project-tech {
+  color: #cbd5f5; 
+}
+
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.project-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-body {
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.project-tagline {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.project-tech {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: #555555;
+}
+
+/* Badges */
+.project-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #333333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-badge--ai {
+  background: #7c3aed;
+}
+
+.project-badge--api {
+  background: #2563eb;
+}
+
+.project-badge--game {
+  background: #ea580c;
+}
+
+.project-badge--personal {
+  background: #16a34a;
+}
+
+.project-badge--wip {
+  background: #6b7280;
+}
+
+/* Modals */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  z-index: 1000;
+}
+
+.project-modal--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-inner {
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  background: #111827;
+  border-radius: 1rem;
+  overflow: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+
+.project-modal-header {
+  margin-bottom: 1rem;
+}
+
+.project-modal-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.modal-subtitle {
+  margin: 0;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+.project-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-modal-media {
+  flex: 0 0 auto;
+}
+
+.project-modal-image {
+  display: block;
+  width: 100%;
+  border-radius: 0.7rem;
+}
+
+.project-modal-content {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+}
+
+.project-modal-content--full {
+  max-width: 720px;
+}
+
+/* Close button */
+.project-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.project-modal-close:hover {
+  background: #4b5563;
+}
+
+/* Lists & links inside modals */
+.project-modal-content h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-modal-content ul {
+  padding-left: 1.1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-modal-content li {
+  margin-bottom: 0.3rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #1f2933;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+/* WIP section */
+.wip-project {
+  margin-top: 1.1rem;
+}
+
+.wip-project h3 {
+  margin: 0 0 0.2rem;
+}
+
+.wip-links a {
+  font-size: 0.9rem;
+}
+
+.wip-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+/* Global helper */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Visually hidden helper (for close button text) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (min-width: 768px) {
+  .project-modal-body {
+    flex-direction: row;
+  }
+
+  .project-modal-media {
+    flex: 0 0 40%;
+  }
+
+  .project-modal-content {
+    flex: 0 0 60%;
+    padding-left: 1rem;
+  }
+
+  .project-modal-inner {
+    padding: 1.75rem 2rem 2rem;
+  }
+}

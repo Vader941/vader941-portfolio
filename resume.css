@@ -1,0 +1,169 @@
+.resume-main {
+  padding-bottom: 3rem;
+}
+
+.resume-hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.resume-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.resume-name {
+  margin: 0 0 0.15rem;
+  font-size: clamp(2.1rem, 3.6vw + 1rem, 2.8rem);
+  font-weight: 800;
+}
+
+.resume-title {
+  margin: 0;
+  color: var(--muted);
+}
+
+.resume-links {
+  font-size: 0.95rem;
+}
+
+.resume-links p {
+  margin: 0;
+}
+
+.resume-links a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.resume-links a:hover {
+  text-decoration: underline;
+}
+
+.resume-summary {
+  margin: 0;
+  max-width: 52rem;
+  color: var(--muted);
+}
+
+.resume-body {
+  padding: 1.5rem 0 0.5rem;
+}
+
+.resume-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.resume-column--left {
+  order: 1;
+}
+
+.resume-column--right {
+  order: 2;
+}
+
+.resume-section-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.resume-pill-group {
+  margin-bottom: 1.25rem;
+}
+
+.resume-pill-group h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill-list li {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  font-size: 0.85rem;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item {
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(30, 64, 175, 0.6);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.resume-item + .resume-item {
+  margin-top: 0.8rem;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.resume-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.resume-item-subtitle {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.resume-item-dates {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.resume-item-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.resume-item-list li {
+  margin-bottom: 0.3rem;
+}
+
+@media (min-width: 760px) {
+  .resume-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .resume-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    align-items: flex-start;
+  }
+
+  .resume-column--left {
+    order: 1;
+  }
+
+  .resume-column--right {
+    order: 2;
+  }
+}

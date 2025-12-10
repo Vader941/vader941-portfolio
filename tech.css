@@ -1,0 +1,123 @@
+/* tech.css — Tech stack / tools page */
+
+.tech-main {
+  padding-bottom: 3rem;
+}
+
+/* Hero */
+.tech-hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.tech-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.2rem, 3.4vw + 1rem, 3rem);
+  font-weight: 800;
+}
+
+.tech-tagline {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  max-width: 48rem;
+}
+
+/* Sections */
+.tech-section {
+  padding: 1.5rem 0 0.5rem;
+}
+
+.tech-section-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+}
+
+.tech-section-intro {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+/* Grid of cards */
+.tech-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1040px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.tech-card {
+  position: relative;
+  background: rgba(28, 37, 57, 0.65);
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 1.25rem 1.35rem 1.35rem;
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.tech-card:hover,
+.tech-card:focus-within {
+  transform: translateY(-6px);
+  background: rgba(40, 52, 76, 0.75);
+  border-color: var(--brand);
+  box-shadow:
+    0 0 22px rgba(56, 189, 248, 0.55),
+    0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+
+.tech-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.45));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.tech-card:hover .tech-logo {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.75));
+}
+
+.tech-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.tech-pill {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7dd3fc;
+}
+
+.tech-card p {
+  margin: 0;
+  color: #bac8dd;
+  line-height: 1.55;
+}

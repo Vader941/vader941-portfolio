@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nathan Able — Home</title>
+  <meta name="description" content="Portfolio home page for Nathan Able." />
+  <!-- Shared site-wide layout styles -->
+  <link rel="stylesheet" href="layout.css">
+  <!-- Home page–specific styles -->
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <button class="menu-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+      <ul id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="tech.html">Tech</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO with circular before/after slider -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Builder • Student • Developer</h1>
+          <p class="hero-subtitle">Real problems → clean, working code.</p>
+        </div>
+
+        <!-- Circular compare component -->
+        <div class="face-compare" aria-label="Photo comparison: professional portrait vs creative cyborg portrait">
+          <!-- Underneath image (cyborg) -->
+          <img class="img img-bottom"
+               src="me2.png"
+               alt="Creative half-cyborg portrait of Nathan">
+
+          <!-- Top image (professional) -->
+          <img class="img img-top"
+               src="me.png"
+               alt="Professional portrait of Nathan">
+
+          <!-- Visual split handle -->
+          <div class="handle" aria-hidden="true"></div>
+
+          <!-- Keyboard/touch accessible control -->
+          <input
+            type="range"
+            class="slider"
+            min="0" max="100" value="50"
+            aria-label="Reveal amount (left shows professional, right shows cyborg)">
+        </div>
+
+        <noscript>
+          <p><strong>Note:</strong> JavaScript is disabled. Showing the professional photo:</p>
+          <img src="me.png" alt="Professional portrait of Nathan" class="fallback-portrait">
+        </noscript>
+      </div>
+    </section>
+  
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+    </div>
+  </footer>
+
+  <!-- Shared nav + footer logic -->
+  <script src="site.js"></script>
+  <!-- Home page specific logic (face compare slider) -->
+  <script src="home.js"></script>
+</body>
+</html>
