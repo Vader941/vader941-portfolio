@@ -140,3 +140,51 @@
   width: 100%;
   max-width: 500px;
 }
+
+/* ----------------------------------------------------
+   Contact Form Feedback Messages
+   ---------------------------------------------------- */
+
+.contact-feedback {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: rgba(15, 23, 42, 0.65); /* matches your theme */
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #e2e8f0;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Success (green glow) */
+.contact-feedback--success {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: rgba(16, 185, 129, 0.12);
+  color: #d1fae5;
+}
+
+/* Error (red glow) */
+.contact-feedback--error {
+  border-color: rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.12);
+  color: #fee2e2;
+}
+
+.contact-feedback--error ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* Honeypot field – hide from users but leave in markup for bots */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}

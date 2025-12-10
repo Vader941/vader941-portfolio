@@ -1,19 +1,23 @@
 <?php
+// Show errors while we debug
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // ---------------- CONFIG ----------------
-$recipientEmail = "nable@vader941.dev"; // TODO: adjust if you change your primary contact
+$recipientEmail = "nable@vader941.dev";   // where YOU want to receive messages
+$fromAddress    = "nable@vader941.dev";     // use a domain-based address for IONOS
 $subjectPrefix  = "[Portfolio Contact] ";
 $successMessage = "Thanks for reaching out! I’ll get back to you as soon as I can.";
-$errorMessage   = "Sorry, something went wrong. Please try again later.";
 
 // ---------------- STATE -----------------
 $formSubmitted = ($_SERVER["REQUEST_METHOD"] === "POST");
 $formErrors    = [];
 $formSuccess   = false;
 
-// Declare variables so they're always defined for repopulating form fields
+// Default values for repopulating form
 $name = $email = $subject = $message = $topic = "";
 
-// ---------------- VALIDATION & SEND -----
+// ---------------- VALIDATION + MAIL -----
 if ($formSubmitted) {
     // Honeypot anti-spam (hidden field should stay empty)
     if (!empty($_POST["website"] ?? "")) {
@@ -38,12 +42,12 @@ if ($formSubmitted) {
         $formErrors[] = "Please select a reason for contacting me.";
     }
 
-    if ($subject === "") {
-        $subject = "Portfolio Contact Form";
-    }
-
     if ($message === "") {
         $formErrors[] = "Please enter a message.";
+    }
+
+    if ($subject === "") {
+        $subject = "Portfolio Contact Form";
     }
 
     if (empty($formErrors)) {
@@ -59,22 +63,22 @@ if ($formSubmitted) {
         ];
         $emailBody = implode("\n", $bodyLines);
 
-        // Use your domain email as From for better deliverability
-        $fromAddress = $recipientEmail;
-        $headers   = "From: Portfolio Site <{$fromAddress}>\r\n";
-        $headers  .= "Reply-To: {$email}\r\n";
-        $headers  .= "X-Mailer: PHP/" . phpversion();
+        $headers  = "From: Portfolio Site <{$fromAddress}>\r\n";
+        $headers .= "Reply-To: {$email}\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
 
-        if (@mail($recipientEmail, $emailSubject, $emailBody, $headers)) {
-            $formSuccess   = true;
-            // Clear fields after successful send
+        $sent = @mail($recipientEmail, $emailSubject, $emailBody, $headers);
+
+        if ($sent) {
+            $formSuccess = true;
             $name = $email = $subject = $message = $topic = "";
         } else {
-            $formErrors[] = $errorMessage;
+            $formErrors[] = "There was a problem sending your message. Please try again later.";
         }
     }
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -107,7 +111,8 @@ if ($formSubmitted) {
       <div class="container">
         <h1 class="contact-title">Get in Touch</h1>
         <p class="contact-tagline">
-          Whether you’re reaching out about a project, collaboration, coursework, or networking, I’m always happy to connect. If you have questions, ideas, or opportunities to share, feel free to send me a message using the form below. I typically respond within a day, and I look forward to hearing from you.
+          Whether you’re reaching out about a project, collaboration, coursework, or networking, I’m always happy to connect.
+          Use the form below and I’ll get back to you as soon as I can.
         </p>
       </div>
     </section>
@@ -140,6 +145,7 @@ if ($formSubmitted) {
     <!-- Form -->
     <section>
       <div class="contact-wrapper">
+
         <?php if ($formSubmitted): ?>
           <?php if ($formSuccess): ?>
             <p class="contact-feedback contact-feedback--success">
@@ -147,6 +153,7 @@ if ($formSubmitted) {
             </p>
           <?php else: ?>
             <div class="contact-feedback contact-feedback--error" role="alert">
+              <strong>There were problems with your submission:</strong>
               <ul>
                 <?php foreach ($formErrors as $error): ?>
                   <li><?php echo htmlspecialchars($error); ?></li>
@@ -156,9 +163,16 @@ if ($formSubmitted) {
           <?php endif; ?>
         <?php endif; ?>
 
-        <form class="contact-form" id="contact-form" action="contact.php" method="POST" autocomplete="off" novalidate>
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="contact.php"
+          method="POST"
+          autocomplete="off"
+          novalidate
+        >
           <div class="form-field">
-            <label for="name">Name</label>
+            <label for="name">Name *</label>
             <input
               id="name"
               name="name"
@@ -170,7 +184,7 @@ if ($formSubmitted) {
           </div>
 
           <div class="form-field">
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
             <input
               id="email"
               name="email"
@@ -182,7 +196,7 @@ if ($formSubmitted) {
           </div>
 
           <div class="form-field">
-            <label for="topic">Reason for contacting</label>
+            <label for="topic">Reason for contacting *</label>
             <select id="topic" name="topic" required>
               <option value="">Select one…</option>
               <option value="portfolio"  <?php echo $topic === "portfolio"  ? "selected" : ""; ?>>Portfolio or projects</option>
@@ -204,7 +218,7 @@ if ($formSubmitted) {
           </div>
 
           <div class="form-field">
-            <label for="message">Message</label>
+            <label for="message">Message *</label>
             <textarea
               id="message"
               name="message"
