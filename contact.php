@@ -83,7 +83,7 @@ if ($formSubmitted) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Nathan Able</title>
-  <meta name="description" content="Get in touch with Nathan Able." />
+<meta name="description" content="Contact Nathan Able for opportunities, collaboration, or questions about his IT and software development work.">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/contact.css">
 </head>

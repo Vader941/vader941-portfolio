@@ -188,3 +188,12 @@
   width: 0;
   pointer-events: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .tech-card,
+  .tech-logo {
+    transition: none;
+    transform: none !important;
+  }
+}

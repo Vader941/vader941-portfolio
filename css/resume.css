@@ -167,3 +167,29 @@
     order: 2;
   }
 }
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #60A5FA; /* Soft tech-blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.resume-btn:hover {
+  background-color: #2563EB;
+  transform: translateY(-2px);
+  text-decoration: none; /* Prevent underline on hover */
+}
+
+
+.resume-btn .icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}

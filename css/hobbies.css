@@ -178,3 +178,12 @@
     font-size: 1.2rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .tech-card,
+  .tech-logo {
+    transition: none;
+    transform: none !important;
+  }
+}

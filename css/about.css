@@ -56,3 +56,12 @@
 .about-goals { padding: 0 0 2.5rem; }
 .goals-list { margin: .25rem 0 0 1.2rem; }
 .goals-list li { margin: .25rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .tech-card,
+  .tech-logo {
+    transition: none;
+    transform: none !important;
+  }
+}

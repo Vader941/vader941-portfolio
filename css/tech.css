@@ -121,3 +121,12 @@
   color: #bac8dd;
   line-height: 1.55;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .tech-card,
+  .tech-logo {
+    transition: none;
+    transform: none !important;
+  }
+}
