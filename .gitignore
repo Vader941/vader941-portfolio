@@ -8,3 +8,4 @@ Thumbs.db
 # Node stuff if you add tools later
 node_modules/
 dist/
+ionos-candidate-known-hosts
