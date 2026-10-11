@@ -1,0 +1,47 @@
+name: Deploy website to IONOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview transfers without changing the server
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ionos-website-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out the selected main commit
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+
+      - name: Stage only allowlisted public files
+        run: python3 scripts/stage-site.py "$RUNNER_TEMP/portfolio-public"
+
+      - name: Install SFTP tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends lftp openssh-client
+
+      - name: Preview or upload website
+        shell: bash
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+        run: bash scripts/deploy-sftp.sh "$RUNNER_TEMP/portfolio-public"
