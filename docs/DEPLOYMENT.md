@@ -1,8 +1,9 @@
-# Manual IONOS SFTP deployment
+# IONOS SFTP deployment
 
-The workflow `.github/workflows/deploy-ionos.yml` runs only on manual dispatch
-and skips any ref other than `refs/heads/main`. The script independently checks
-that ref. No website build is needed: the site uses local HTML/CSS/JavaScript,
+The workflow `.github/workflows/deploy-ionos.yml` automatically uploads on pushes
+to `main` and also supports manual dispatch. It skips any ref other than
+`refs/heads/main`. The script independently checks that ref. No website build
+is needed: the site uses local HTML/CSS/JavaScript,
 images, a PDF, and the existing PHP mail handler. No PHP configuration or form
 behavior is changed by deployment preparation.
 
@@ -71,11 +72,19 @@ Public host keys are written temporarily with restricted permissions and
 cleaned up. The password is supplied only through `LFTP_PASSWORD` and
 `--env-password`; no credential file or shell tracing is used.
 
-## First dry run, then a real upload
+## Automatic uploads and manual previews
 
-1. After you separately review and place these files on the repository's
-   default branch/main, open GitHub **Actions → Deploy website to IONOS →
-   Run workflow**. This preparation does not commit or push anything.
+Every push to `main`, including a merged pull request, runs a real upload with
+`DRY_RUN` set to the explicit string `"false"`. Pushes to other branches do not
+trigger this workflow. There is no path filter: any push to `main` triggers it.
+Once this workflow update is on `main`, that push can itself initiate an upload.
+
+The manual checkbox defaults to a preview. Its boolean value is serialized
+directly as `"true"` or `"false"`, so an unchecked checkbox remains a real upload.
+The initial manual dry run and live deployment succeeded; the live site,
+résumé download, and contact-form delivery were verified.
+
+1. Open GitHub **Actions → Deploy website to IONOS → Run workflow**.
 2. Select **main** and leave **dry_run** checked (the default). Run the workflow.
    Review the staged-file list and planned transfers in the logs. A dry run
    authenticates and reads remote listings but makes no server changes. Confirm
@@ -115,5 +124,6 @@ timestamps may cause unchanged files to be uploaded again. Obsolete remote
 files are **not removed**, including previous public assets no longer in use.
 Uploads are not an atomic release: an interruption can leave a partially updated
 site. A subsequent run can complete it. SFTP connectivity, actual host-key trust,
-remote permissions, document-root mapping, and PHP mail delivery require the
-first authorized GitHub dry run/live checks; they cannot be verified offline.
+remote permissions, document-root mapping, and PHP mail delivery cannot be
+verified offline. They passed the initial deployment checks; recheck them after
+connection, hosting, or contact-form changes.

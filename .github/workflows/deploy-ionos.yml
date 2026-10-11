@@ -1,6 +1,9 @@
 name: Deploy website to IONOS
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       dry_run:
@@ -38,7 +41,7 @@ jobs:
       - name: Preview or upload website
         shell: bash
         env:
-          DRY_RUN: ${{ inputs.dry_run }}
+          DRY_RUN: ${{ github.event_name == 'push' && 'false' || toJSON(inputs.dry_run) }}
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USER: ${{ secrets.SFTP_USER }}
           LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
