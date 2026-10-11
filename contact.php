@@ -7,6 +7,14 @@ $fromAddress    = "nable@vader941.dev";     // use a domain-based address for IO
 $subjectPrefix  = "[Portfolio Contact] ";
 $successMessage = "Thanks for reaching out! I’ll get back to you as soon as I can.";
 
+// Reasons shared by the form, validation, and email formatting.
+$topicLabels = [
+    "job" => "Job opportunity",
+    "project" => "Project inquiry",
+    "networking" => "Networking",
+    "other" => "Other"
+];
+
 // ---------------- STATE -----------------
 $formSubmitted = ($_SERVER["REQUEST_METHOD"] === "POST");
 $formErrors    = [];
@@ -38,6 +46,8 @@ if ($formSubmitted) {
 
     if ($topic === "") {
         $formErrors[] = "Please select a reason for contacting me.";
+    } elseif (!array_key_exists($topic, $topicLabels)) {
+        $formErrors[] = "Please select a valid reason for contacting me.";
     }
 
     if ($message === "") {
@@ -54,7 +64,7 @@ if ($formSubmitted) {
         $bodyLines = [
             "Name: {$name}",
             "Email: {$email}",
-            "Reason for contacting: " . ($topic !== "" ? $topic : "Not specified"),
+            "Reason for contacting: " . $topicLabels[$topic],
             "",
             "Message:",
             $message
@@ -83,7 +93,8 @@ if ($formSubmitted) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Nathan Able</title>
-<meta name="description" content="Contact Nathan Able for opportunities, collaboration, or questions about his IT and software development work.">
+  <meta name="description" content="Contact Nathan Able about business systems analysis or implementation opportunities, his work, networking, or a practical software problem by email or the contact form.">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/contact.css">
 </head>
@@ -94,7 +105,7 @@ if ($formSubmitted) {
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Selected Work</a></li>
         <li><a href="tech.html">Tech</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -108,10 +119,7 @@ if ($formSubmitted) {
     <section class="contact-hero">
       <div class="container">
         <h1 class="contact-title">Get in Touch</h1>
-        <p class="contact-tagline">
-          Whether you’re reaching out about a project, collaboration, coursework, or networking, I’m always happy to connect.
-          Use the form below and I’ll get back to you as soon as I can.
-        </p>
+        <p class="contact-tagline">If you have an opportunity in business systems analysis or implementation, I’d like to hear about it. I’m also happy to talk about my work, connect with others in the field, or discuss a practical software problem. You can email me directly or use the form below.</p>
       </div>
     </section>
 
@@ -121,11 +129,6 @@ if ($formSubmitted) {
         <div class="contact-card">
           <h2>Email</h2>
           <p><a href="mailto:able.nathan.t@gmail.com">able.nathan.t@gmail.com</a></p>
-        </div>
-
-        <div class="contact-card">
-          <h2>Phone</h2>
-          <p><a href="tel:18123913587">812.391.3587</a></p>
         </div>
 
         <div class="contact-card">
@@ -197,10 +200,9 @@ if ($formSubmitted) {
             <label for="topic">Reason for contacting *</label>
             <select id="topic" name="topic" required>
               <option value="">Select one…</option>
-              <option value="portfolio"  <?php echo $topic === "portfolio"  ? "selected" : ""; ?>>Portfolio or projects</option>
-              <option value="networking" <?php echo $topic === "networking" ? "selected" : ""; ?>>Networking or career</option>
-              <option value="coursework" <?php echo $topic === "coursework" ? "selected" : ""; ?>>Coursework or class-related</option>
-              <option value="other"      <?php echo $topic === "other"      ? "selected" : ""; ?>>Other</option>
+              <?php foreach ($topicLabels as $value => $label): ?>
+                <option value="<?php echo htmlspecialchars($value); ?>" <?php echo $topic === $value ? "selected" : ""; ?>><?php echo htmlspecialchars($label); ?></option>
+              <?php endforeach; ?>
             </select>
           </div>
 
@@ -233,7 +235,7 @@ if ($formSubmitted) {
           </div>
 
           <button type="submit" class="contact-button">
-            Submit
+            Send Message
           </button>
 
           <p class="contact-note">
@@ -246,7 +248,7 @@ if ($formSubmitted) {
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group.</p>
+      <p>© <span id="year"></span> Nathan Able.</p>
     </div>
   </footer>
 

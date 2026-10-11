@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tech Stack — Nathan Able</title>
-<meta name="description" content="Overview of the tools and technologies Nathan Able works with, including web development, programming languages, databases, and cloud platforms.">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Technical Skills &amp; Working Approach — Nathan Able</title>
+  <meta name="description" content="Nathan Able’s technical skills and working approach support business systems analysis through data, automation, application development, systems integration, and requirements coordination.">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/tech.css">
 </head>
@@ -16,7 +16,7 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Selected Work</a></li>
         <li><a href="tech.html" aria-current="page">Tech</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -26,250 +26,202 @@
   </header>
 
   <main id="main" class="tech-main">
-    <!-- Hero / intro -->
-    <section class="tech-hero">
+    <section class="tech-hero" aria-labelledby="tech-title">
       <div class="container">
-        <h1 class="tech-title">Tech Stack & Workflow</h1>
-        <p class="tech-tagline">
-          Good projects are more than code snippets. They come from choosing the right tools,
-          understanding how they fit together, and using them in a way that stays readable when
-          someone opens the repo a year later.
-        </p>
-        <p>
-          This page gives a high-level view of the languages, tools, and platforms I use most often.
-          It is not meant to be a buzzword dump. These are the technologies that actually show up in
-          my projects and classwork, from basic HTML layouts to full-stack apps deployed to the cloud.
-        </p>
+        <h1 class="tech-title" id="tech-title">Technical Skills &amp; Working Approach</h1>
+        <p class="tech-tagline">Understanding a process is one part of the work. Understanding the technology behind it helps me figure out what can be changed, what needs to connect, and what it will take to build a useful solution.</p>
+        <p class="tech-tagline">These are tools I&#x27;ve used at work, in my projects, and through my education. My experience varies across them, so I&#x27;ve described how I&#x27;ve used each rather than assigning proficiency ratings.</p>
       </div>
     </section>
 
-    <!-- Core languages -->
-    <section class="tech-section">
+    <section class="tech-section" aria-labelledby="tech-section-1">
       <div class="container">
-        <h2 class="tech-section-title">Core Languages</h2>
-        <p class="tech-section-intro">
-          The foundations I reach for when building the front end of a site, experimenting with
-          logic, or automating small tasks.
-        </p>
-
+        <h2 class="tech-section-title" id="tech-section-1">Data &amp; Automation</h2>
         <div class="tech-grid">
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/html5.svg" alt="HTML5 logo" class="tech-logo">
-              <div>
-                <h3>HTML</h3>
-                <p class="tech-pill">Structure & accessibility</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Microsoft_Office_Excel.svg" alt="" class="tech-logo" loading="lazy">
+                <img src="images/Microsoft_VBA.png" alt="" class="tech-logo--wide tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Excel &amp; VBA</h3>
+                <p class="tech-pill">Process automation</p>
               </div>
             </div>
-            <p>
-              I focus on semantic markup, meaningful headings, and screen-reader friendly layouts.
-              Most of my projects start with clean HTML before any styling or JavaScript is added.
-            </p>
+            <p>At Amazon, I used Excel and VBA to build tools around the way the work actually happened. That included a productivity-tracking prototype and inbound and outbound automation that brought together tasks spread across several systems.</p>
           </article>
-
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/css3.svg" alt="CSS3 logo" class="tech-logo">
-              <div>
-                <h3>CSS</h3>
-                <p class="tech-pill">Layout & design systems</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Tableau_Logo.png" alt="" class="tech-logo tech-logo--wordmark tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Tableau</h3>
+                <p class="tech-pill">Operational analysis</p>
               </div>
             </div>
-            <p>
-              I rely on Flexbox and Grid for layout, keep colors and spacing in CSS variables, and
-              aim for responsive designs that behave well from mobile through desktop.
-            </p>
+            <p>I used Tableau reports created by management to understand productivity, look for patterns, and support capacity planning. My part was interpreting what the data meant for the operation and where it pointed to something worth investigating.</p>
           </article>
-
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/javascript.svg" alt="JavaScript logo" class="tech-logo">
-              <div>
-                <h3>JavaScript</h3>
-                <p class="tech-pill">Interactivity & logic</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Sql_logo.svg" alt="" class="tech-logo tech-logo--wide tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>SQL</h3>
+                <p class="tech-pill">Working with data</p>
               </div>
             </div>
-            <p>
-              From DOM manipulation to API calls and simple game loops, JavaScript is where most of
-              the interactivity in my projects lives. I prefer small, focused modules over giant files.
-            </p>
-          </article>
-
-          <article class="tech-card">
-            <div class="tech-card-header">
-              <img src="images/python.svg" alt="Python logo" class="tech-logo">
-              <div>
-                <h3>Python</h3>
-                <p class="tech-pill">Scripting & backend practice</p>
-              </div>
-            </div>
-            <p>
-              I use Python for scripting, data-heavy exercises, and backend prototypes. It shows up
-              in projects like my Sudoku game and lab tooling for pipette calibration.
-            </p>
+            <p>My software development and IT coursework includes SQL and relational databases. That gives me a foundation for understanding how information is stored, how records connect, and how to query the data a system depends on.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Frameworks & libraries -->
-    <section class="tech-section">
+    <section class="tech-section" aria-labelledby="tech-section-2">
       <div class="container">
-        <h2 class="tech-section-title">Frameworks & Libraries</h2>
-        <p class="tech-section-intro">
-          Tools that help me move faster while staying in control of what the code is actually doing.
-        </p>
-
-        <div class="tech-grid">
+        <h2 class="tech-section-title" id="tech-section-2">Application Development</h2>
+        <div class="tech-grid tech-grid--four">
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/react.svg" alt="React logo" class="tech-logo">
-              <div>
-                <h3>React</h3>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/python.svg" alt="" class="tech-logo" loading="lazy">
+                <img src="images/django_logo.svg" alt="" class="tech-logo tech-logo--wide" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Python &amp; Django</h3>
+                <p class="tech-pill">Application logic and backend development</p>
+              </div>
+            </div>
+            <p>I use Python and Django in application projects, including our current stock trading capstone. My work includes market simulation, price history, and bringing features together so they follow the same rules.</p>
+          </article>
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/javascript.svg" alt="" class="tech-logo tech-logo--backing" loading="lazy">
+                <img src="images/nodejs.svg" alt="" class="tech-logo tech-logo--wordmark tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>JavaScript &amp; Node.js</h3>
+                <p class="tech-pill">Interactive applications and APIs</p>
+              </div>
+            </div>
+            <p>I&#x27;ve used JavaScript for interactive websites and applications, and Node.js and Express for backend coursework. That work includes API integration, authentication, and connecting applications to databases.</p>
+          </article>
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/html5.svg" alt="" class="tech-logo tech-logo--backing" loading="lazy">
+                <img src="images/css3.svg" alt="" class="tech-logo tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>HTML &amp; CSS</h3>
+                <p class="tech-pill">Structure, layout, and accessibility</p>
+              </div>
+            </div>
+            <p>I use HTML and CSS to build interfaces people can navigate and use across different screen sizes. That includes page structure, forms, responsive layouts, and accessibility considerations.</p>
+          </article>
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/react.svg" alt="" class="tech-logo" loading="lazy">
+                <img src="images/vite.svg" alt="" class="tech-logo" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>React &amp; Vite</h3>
                 <p class="tech-pill">Component-based interfaces</p>
               </div>
             </div>
-            <p>
-              I use React with Vite when I need stateful interfaces, such as the Visual Daily
-              Scheduler concept. I aim for clear component boundaries and predictable data flow.
-            </p>
-          </article>
-
-          <article class="tech-card">
-            <div class="tech-card-header">
-              <img src="images/vite.svg" alt="Vite logo" class="tech-logo">
-              <div>
-                <h3>Vite</h3>
-                <p class="tech-pill">Fast dev tooling</p>
-              </div>
-            </div>
-            <p>
-              Vite gives me quick builds and a smooth dev experience when working with modern
-              JavaScript or React projects, especially those I plan to grow over time.
-            </p>
-          </article>
-
-          <article class="tech-card">
-            <div class="tech-card-header">
-              <img src="images/nodejs.svg" alt="Node.js logo" class="tech-logo">
-              <div>
-                <h3>Node.js</h3>
-                <p class="tech-pill">APIs & tooling</p>
-              </div>
-            </div>
-            <p>
-              I use Node.js for small backend services, build scripts, and working with APIs like
-              OpenWeather, TMDB, NASA, and OpenAI.
-            </p>
+            <p>I&#x27;ve used React with Vite for web projects and prototypes. Breaking an interface into components helps me work through how information moves through the application and how the pieces fit together.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Platforms & DevOps-ish -->
-    <section class="tech-section">
+    <section class="tech-section" aria-labelledby="tech-section-3">
       <div class="container">
-        <h2 class="tech-section-title">Platforms & Hosting</h2>
-        <p class="tech-section-intro">
-          Where my projects live and how I keep API keys and deployments under control.
-        </p>
-
+        <h2 class="tech-section-title" id="tech-section-3">Systems &amp; Integration</h2>
         <div class="tech-grid">
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/github.svg" alt="GitHub logo" class="tech-logo">
-              <div>
-                <h3>Git & GitHub</h3>
-                <p class="tech-pill">Version control</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Database-icon.svg" alt="" class="tech-logo tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Databases</h3>
+                <p class="tech-pill">Application data and relationships</p>
               </div>
             </div>
-            <p>
-              I use Git for branching, commits, and pull requests, with GitHub as my primary place
-              for collaboration, issues, and project documentation.
-            </p>
+            <p>My coursework and projects include SQL Server, MongoDB, and SQLite. I&#x27;ve worked with database queries, application models, and the connections between stored data and application behavior.</p>
           </article>
-
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/cloudflare.svg" alt="Cloudflare logo" class="tech-logo">
-              <div>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Sys_admin.png" alt="" class="tech-logo tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Systems Administration</h3>
+                <p class="tech-pill">Configuration and deployment</p>
+              </div>
+            </div>
+            <p>My IT coursework includes Windows Server, Active Directory, and Microsoft Endpoint Configuration Manager. In a lab environment, I&#x27;ve configured software deployments, explored security policies, and worked with reporting and system configuration.</p>
+          </article>
+          <article class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/cloudflare.svg" alt="" class="tech-logo tech-logo--wordmark tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
                 <h3>Cloudflare Workers</h3>
-                <p class="tech-pill">Secure API proxies</p>
+                <p class="tech-pill">API integration</p>
               </div>
             </div>
-            <p>
-              I proxy external APIs (NASA, OpenWeather, OpenAI, TMDB) through Workers so keys stay
-              server-side and the browser never sees sensitive credentials.
-            </p>
-          </article>
-
-          <article class="tech-card">
-            <div class="tech-card-header">
-              <img src="images/render.svg" alt="Render logo" class="tech-logo">
-              <div>
-                <h3>Render</h3>
-                <p class="tech-pill">Full-stack deployment</p>
-              </div>
-            </div>
-            <p>
-              Render hosts my full-stack projects, including Node/Express backends and Vite-built
-              frontends, keeping everything in one place with simple deploys.
-            </p>
+            <p>I&#x27;ve used Cloudflare Workers as a server-side connection between web applications and external APIs. That lets the application make requests without putting API credentials in the browser.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Workflow tools -->
-    <section class="tech-section">
+    <section class="tech-section" aria-labelledby="tech-section-4">
       <div class="container">
-        <h2 class="tech-section-title">Everyday Workflow</h2>
-        <p class="tech-section-intro">
-          The tools that make it realistic to balance school, projects, and experiments without
-          losing track of what I am doing.
-        </p>
-
+        <h2 class="tech-section-title" id="tech-section-4">How I Work</h2>
         <div class="tech-grid">
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/vscode.svg" alt="VS Code logo" class="tech-logo">
-              <div>
-                <h3>Visual Studio Code</h3>
-                <p class="tech-pill">Primary editor</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/Trello_logo.svg" alt="" class="tech-logo tech-logo--wordmark tech-logo--backing" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Requirements &amp; Coordination</h3>
+                <p class="tech-pill">Turning scope into coordinated work</p>
               </div>
             </div>
-            <p>
-              VS Code is where I spend most of my time: linting, formatters, Git integration, and
-              extensions tuned for web development and Python work.
-            </p>
+            <p>For our capstone, I work through requirements, document the system design, and break the work into assignments. I use Trello to help track progress and coordinate features that depend on one another.</p>
           </article>
-
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/chrome.png" alt="Chrome DevTools logo" class="tech-logo">
-              <div>
-                <h3>Chrome DevTools</h3>
-                <p class="tech-pill">Debugging & performance</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/github.svg" alt="" class="tech-logo" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Git &amp; GitHub</h3>
+                <p class="tech-pill">Collaboration and change review</p>
               </div>
             </div>
-            <p>
-              I use DevTools for layout inspection, network requests, performance checks, and
-              testing how interfaces respond at different screen sizes.
-            </p>
+            <p>I use branches and pull requests to keep changes reviewable. As capstone lead, I review teammates&#x27; work, discuss follow-ups, and coordinate integration so separately developed features work together.</p>
           </article>
-
           <article class="tech-card">
             <div class="tech-card-header">
-              <img src="images/notion.svg" alt="Notion or notes logo" class="tech-logo">
-              <div>
-                <h3>Planning & Notes</h3>
-                <p class="tech-pill">Task tracking</p>
+              <div class="tech-logos" aria-hidden="true">
+                <img src="images/chrome.png" alt="" class="tech-logo" loading="lazy">
+              </div>
+              <div class="tech-heading-group">
+                <h3>Testing &amp; Troubleshooting</h3>
+                <p class="tech-pill">Following the problem through the system</p>
               </div>
             </div>
-            <p>
-              Simple task lists and project notes help me keep school assignments, portfolio ideas,
-              and long-term experiments moving in the right direction.
-            </p>
+            <p>I use browser tools and application tests to investigate behavior and check changes. I want to understand where a problem starts, what it affects, and whether the fix holds up when the pieces come together.</p>
           </article>
         </div>
       </div>
@@ -278,7 +230,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+      <p>© <span id="year"></span> Nathan Able.</p>
     </div>
   </footer>
 

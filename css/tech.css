@@ -27,7 +27,7 @@
 }
 
 .tech-section-title {
-  margin: 0 0 0.35rem;
+  margin: 0 0 1.25rem;
   font-size: 1.6rem;
 }
 
@@ -41,7 +41,7 @@
 .tech-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 @media (min-width: 720px) {
@@ -54,8 +54,10 @@
   .tech-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .tech-grid--four .tech-card:last-child { grid-column: 1 / -1; }
 }
 .tech-card {
+  min-width: 0;
   position: relative;
   background: rgba(28, 37, 57, 0.65);
   border-radius: 16px;
@@ -84,17 +86,36 @@
 
 .tech-card-header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0.9rem;
   margin-bottom: 0.65rem;
 }
+
+.tech-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  min-height: 48px;
+}
+.tech-heading-group { min-width: 0; }
 
 .tech-logo {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
+  object-fit: contain;
   filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.45));
   transition: transform 0.25s ease, filter 0.25s ease;
+}
+.tech-logo--wide { width: 96px; }
+.tech-logo--wordmark { width: 144px; max-width: 100%; }
+.tech-logo--backing {
+  background: #f1f5f9;
+  padding: .25rem;
+  border-radius: .35rem;
+  object-fit: contain;
 }
 
 .tech-card:hover .tech-logo {
@@ -121,9 +142,10 @@
   color: #bac8dd;
   line-height: 1.55;
 }
+.tech-card > p { max-width: 70ch; }
+.tech-card .tech-pill { margin-top: .25rem; color: #7dd3fc; font-size: .85rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-card,
   .tech-card,
   .tech-logo {
     transition: none;

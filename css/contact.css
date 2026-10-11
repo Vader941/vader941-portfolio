@@ -32,10 +32,15 @@
 .contact-info {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 900px) {
+  .contact-info { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .contact-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 1.25rem;
   border-radius: 16px;
   background: rgba(28, 37, 57, 0.65);
@@ -98,7 +103,8 @@
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   width: 100%;
   padding: 0.55rem 0.75rem;
   border-radius: 8px;
@@ -107,6 +113,7 @@
   color: #e2e8f0;
   font-size: 1rem;
 }
+.form-field select { width: auto; max-width: 100%; }
 
 .contact-button {
   padding: 0.6rem 1.2rem;
