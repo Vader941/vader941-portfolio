@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Nathan Able</title>
-<meta name="description" content="Learn more about Nathan Able, an IT student and developer combining real-world experience, client work, and hands-on projects to build practical digital solutions.">
+  <meta name="description" content="Nathan Able’s direction toward business systems analysis draws on nine years of operational experience at Amazon and technical education in Software Development and Information Technology.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/about.css">
@@ -16,7 +16,7 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Selected Work</a></li>
         <li><a href="tech.html">Tech</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -26,19 +26,28 @@
   </header>
 
   <main id="main">
-    <section class="about-hero">
+    <section class="about-hero" aria-labelledby="about-title">
       <div class="container">
-        <h1 class="about-title">About Me</h1>
-        <p class="about-tagline">Student developer focused on useful, readable code.</p>
+        <h1 id="about-title" class="about-title">About Me</h1>
+        <p class="about-subheading">Understanding the work before changing the system.</p>
 
         <div class="about-intro">
-          <p>I’m a student developer who enjoys building things that make a difference, especially tools that help people learn in ways that fit how they think. Analytical and thorough by nature, I approach every project with a focus on mechanics and impact: what the user experiences on the front end and how it functions under the hood.</p>
+          <p>When I look at a problem, I want to understand what happens before it, what happens after it, and who is affected when we change something. Fixing one part of a process doesn't help much if we just move the problem somewhere else.</p>
 
-          <p>My interest in educational software is personal. I’m the father of a bright, funny, and autistic 10-year-old who learns best through interaction and play. Watching how he processes the world, excelling at games and logic but struggling in traditional classrooms, has pushed me to imagine better ways technology can support neurodivergent learners. My long-term goal is to combine my technical skills and his insights to build accessible, interactive learning tools for children like him.</p>
+          <p>I spent nine years at Amazon working in inventory systems, Transshipment and Vendor Returns, and product imaging. That work required understanding how things connected. When something couldn't be received into inventory, we had to research ownership, labeling, billing, and whatever else was keeping it from moving through the normal process.</p>
 
-          <p>I’m most at home when I can take a clear goal and figure out the best way to reach it. I like to make projects interactive, refine what already exists, and balance independence with collaboration, working toward shared results without micromanagement.</p>
+          <p>In product imaging, I worked with people doing very different parts of the same workflow. I built tools for validation and productivity tracking, but the work started with understanding what people needed and where the existing process was falling short. The people doing the work knew things the numbers alone couldn't tell us.</p>
 
-          <p>Whether I’m scripting a new feature, troubleshooting an app, or rethinking a system from the ground up, I aim for the same outcome: solutions that work cleanly, help people, and keep improving over time.</p>
+          <p>In 2021, my department closed. Relocation wasn't an option for me, so I took the opportunity to return to school and build on the technical experience I already had. I began driving Uber full time to support myself while studying. I earned my associate degree in Software Development from Ivy Tech, graduating Magna Cum Laude. Uber's education benefit now covers my studies at Arizona State University, where I'm completing my bachelor's in Information Technology. I expect to graduate in December 2026, also with Magna Cum Laude honors.</p>
+
+          <p>I also started Able Software and Web, where I'm developing websites, software, and automation for small-business needs. For my current capstone, I lead a three-person team building a mock stock trading system. That means contributing code, but also working through requirements, coordinating assignments, reviewing changes, and making sure the pieces work together.</p>
+
+          <p>Business systems analysis brings together the parts of the work I enjoy most. I like researching a problem, talking with the people involved, and figuring out what a system needs to do. My technical background helps me understand how we can build it, and my operational experience helps me question whether it will actually work for the people using it.</p>
+        </div>
+
+        <div class="about-actions">
+          <a class="about-button about-button-primary" href="projects.html">Explore My Work</a>
+          <a class="about-button" href="contact.php">Contact Me</a>
         </div>
       </div>
     </section>
@@ -46,7 +55,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+      <p>© <span id="year"></span> Nathan Able.</p>
     </div>
   </footer>
 

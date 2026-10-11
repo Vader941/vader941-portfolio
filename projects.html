@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Nathan Able</title>
-<meta name="description" content="Selected development projects by Nathan Able, including web apps, coursework, and client solutions that highlight problem-solving and clean, reliable code.">
+  <title>Selected Work — Nathan Able</title>
+  <meta name="description" content="Explore Nathan Able’s existing development projects, the problems behind them, and the technical work supporting his direction toward business systems analysis.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/projects.css">
@@ -16,7 +16,7 @@
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="projects.html" aria-current="page">Selected Work</a></li>
         <li><a href="tech.html">Tech</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -29,17 +29,59 @@
     <!-- Intro -->
     <section class="projects-intro">
       <div class="container">
-        <h1 class="projects-title">Projects I’m Proud Of</h1>
-        <p class="projects-tagline">
-          These aren’t just homework assignments or throwaway demos. Each project here represents
-          real effort, debugging, design decisions, and learning — and they all run on code I wrote.
-        </p>
+        <h1 class="projects-title">Selected Work</h1>
+        <p class="projects-tagline">A closer look at the problems I've worked through, the tools I've built, and my part in bringing them together.</p>
       </div>
     </section>
 
-    <!-- Featured projects grid -->
-    <section class="projects-grid-section">
+    <!-- Featured work -->
+    <section class="projects-grid-section" aria-labelledby="featured-work-title">
       <div class="container">
+        <h2 class="projects-section-title" id="featured-work-title">Featured Work</h2>
+        <div class="projects-grid projects-grid--featured">
+          <article class="project-card project-card--featured" id="productivity-tracking" data-modal-target="modal-productivity-tracking">
+            <div class="project-badge project-badge--analysis">Analysis · Automation</div>
+            <img src="images/Amazon_logo.svg" alt="Amazon logo" class="project-thumb project-thumb--logo">
+            <div class="project-card-body">
+              <h3 class="project-name">Productivity Tracking</h3>
+              <p class="project-tagline">Counting items didn’t tell us how much work they required. I built a prototype that helped turn complexity into a useful productivity measure.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-productivity-tracking" aria-label="View Project: Productivity Tracking">View Project</button>
+              <p class="project-tech">Excel · VBA · Requirements Gathering · Tableau</p>
+            </div>
+          </article>
+
+          <article class="project-card project-card--featured" id="inbound-outbound-automation" data-modal-target="modal-inbound-outbound-automation">
+            <div class="project-badge project-badge--automation">Automation · Process Improvement</div>
+            <img src="images/Amazon_logo.svg" alt="Amazon logo" class="project-thumb project-thumb--logo">
+            <div class="project-card-body">
+              <h3 class="project-name">Inbound and Outbound Automation</h3>
+              <p class="project-tagline">Receiving an item took roughly two to five minutes across several systems. I built automation that brought most items down to eight to fifteen seconds, with checks to catch problems along the way.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-inbound-outbound-automation" aria-label="View Project: Inbound and Outbound Automation">View Project</button>
+              <p class="project-tech">Excel · VBA · Process Automation · Data Validation</p>
+            </div>
+          </article>
+
+          <article class="project-card project-card--featured" id="stock-trading-capstone" data-modal-target="modal-stock-trading-capstone">
+            <div class="project-badge project-badge--team">Team Project · In Development</div>
+            <div class="project-thumb project-thumb--text">
+              <span>Mock Stock Trading System</span>
+              <span class="project-preview-label">IT Capstone</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-name">Stock Trading Capstone</h3>
+              <p class="project-tagline">I lead a three-person team building a Django trading simulation, working through requirements and bringing our individual contributions together.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-stock-trading-capstone" aria-label="View Project: Stock Trading Capstone">View Project</button>
+              <p class="project-tech">Django · Python · Systems Analysis · Project Management</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional work -->
+    <section class="projects-grid-section" aria-labelledby="additional-work-title">
+      <div class="container">
+        <h2 class="projects-section-title" id="additional-work-title">Additional Work</h2>
         <div class="projects-grid" aria-label="Project gallery">
 
           <!-- L'Oréal Beauty Routines -->
@@ -47,8 +89,9 @@
             <div class="project-badge project-badge--ai">AI • Frontend</div>
             <img src="images/loreal.jpg" alt="Loreal project home screen" class="project-thumb">
             <div class="project-card-body">
-              <h2 class="project-name">L’Oréal Beauty Routines</h2>
+              <h3 class="project-name">L’Oréal Beauty Routines</h3>
               <p class="project-tagline">Chat with your own personal beauty consultant and build a routine around the products you choose.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-loreal" aria-label="View Project: L’Oréal Beauty Routines">View Project</button>
               <p class="project-tech">HTML · CSS · JavaScript · OpenAI API · Cloudflare Workers</p>
             </div>
           </article>
@@ -58,8 +101,9 @@
             <div class="project-badge project-badge--api">API · Frontend</div>
             <img src="images/nasa.jpg" alt="NASA project home screen" class="project-thumb">
             <div class="project-card-body">
-              <h2 class="project-name">Space Explorer</h2>
+              <h3 class="project-name">Space Explorer</h3>
               <p class="project-tagline">Pick a date range, then let NASA’s image archive walk you through our universe one day at a time.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-nasa" aria-label="View Project: Space Explorer">View Project</button>
               <p class="project-tech">HTML · CSS · JavaScript · NASA API · Cloudflare Workers</p>
             </div>
           </article>
@@ -69,8 +113,9 @@
             <div class="project-badge project-badge--game">Game · Prototype</div>
             <img src="images/charity.jpg" alt="Charity Water project home screen" class="project-thumb">
             <div class="project-card-body">
-              <h2 class="project-name">Pipeline to Hope</h2>
+              <h3 class="project-name">Pipeline to Hope</h3>
               <p class="project-tagline">A fast-paced pipe-connecting game built to raise awareness for clean water access.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-charity" aria-label="View Project: Pipeline to Hope">View Project</button>
               <p class="project-tech">HTML · CSS · JavaScript</p>
             </div>
           </article>
@@ -80,70 +125,188 @@
             <div class="project-badge project-badge--personal">Personal · Games</div>
             <img src="images/minigame.jpg" alt="Mini games project home screen" class="project-thumb">
             <div class="project-card-body">
-              <h2 class="project-name">Mini Games Arcade</h2>
+              <h3 class="project-name">Mini Games Arcade</h3>
               <p class="project-tagline">A growing collection of JavaScript mini-games built for quick study breaks and debugging practice.</p>
+              <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-arcade" aria-label="View Project: Mini Games Arcade">View Project</button>
               <p class="project-tech">HTML · CSS · JavaScript</p>
             </div>
           </article>
 
-          <!-- Works in Progress -->
-          <article class="project-card project-card--wip" data-modal-target="modal-wip">
-            <div class="project-badge project-badge--wip">Works in Progress</div>
-            <img src="images/wip.png" alt="Preview collage representing work in progress projects" class="project-thumb">
-            <div class="project-card-body">
-              <h2 class="project-name">Works in Progress</h2>
-              <p class="project-tagline">
-                Oregon Trail fan build, What Can I Cook?, and the Visual Daily Scheduler — all evolving as I learn new tools and techniques.
-              </p>
-              <p class="project-tech">HTML · CSS · JavaScript · React · Vite · Node.js · Python</p>
-            </div>
-          </article>
 
         </div>
       </div>
     </section>
 
+    <div class="projects-closing">
+      <div class="container projects-closing-grid">
+        <article class="project-card project-card--wip" data-modal-target="modal-wip">
+          <img src="images/wip.png" alt="Preview collage representing work in progress projects" class="project-thumb">
+          <div class="project-card-body">
+            <div class="project-badge project-badge--wip">Works in Progress</div>
+            <h2 class="project-name">Works in Progress</h2>
+            <p class="project-tagline">
+              Oregon Trail fan build, What Can I Cook?, and the Visual Daily Scheduler — all evolving as I learn new tools and techniques.
+            </p>
+            <button class="project-view" type="button" aria-haspopup="dialog" aria-controls="modal-wip" aria-label="View Project: Works in Progress">View Project</button>
+            <p class="project-tech">HTML · CSS · JavaScript · React · Vite · Node.js · Python</p>
+          </div>
+        </article>
+
+        <section class="able-business" aria-labelledby="able-business-title">
+          <h2 class="projects-section-title" id="able-business-title">Able Software and Web</h2>
+          <div class="able-business-copy">
+            <p>I started Able Software and Web to put my experience into practice for individuals and small businesses. My focus is on understanding how the work gets done and figuring out where a website, automation, or custom software would actually help.</p>
+            <p>The business is still developing. It gives me a place to work through practical needs, explore solutions, and build on what I've learned in operations and school.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
     <!-- ===== Modals ===== -->
 
-    <!-- L'Oréal modal -->
-    <section class="project-modal" id="modal-loreal" role="dialog" aria-modal="true" aria-labelledby="modal-loreal-title">
+    <section class="project-modal project-modal--case-study" id="modal-productivity-tracking" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-productivity-tracking-title">
       <div class="project-modal-inner">
-        <button class="project-modal-close" type="button" data-modal-close>
-          <span class="visually-hidden">Close</span> ✕
-        </button>
-
-        <div class="project-modal-header">
-          <h2 id="modal-loreal-title">L’Oréal Beauty Routines</h2>
-          <p class="modal-subtitle">AI-powered routine builder and product advisor</p>
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
         </div>
-
-        <div class="project-modal-body">
-          <div class="project-modal-media">
-            <img src="images/loreal.jpg" alt="Loreal project home screen" class="project-modal-image">
+        <div class="project-modal-scroll" tabindex="0">
+          <div class="project-modal-header">
+            <h2 id="modal-productivity-tracking-title">Productivity Tracking</h2>
+            <p class="modal-subtitle">From a barcode-scanning prototype to an approach used across 108 studios.</p>
           </div>
-          <div class="project-modal-content">
-            <p>
-              L’Oréal Beauty Routines lets visitors build a skincare or beauty routine around real products and then
-              chat with a personal beauty advisor powered by OpenAI. Users can filter products by category, select the
-              ones they care about, and ask detailed questions about when and how to use everything together.
-            </p>
-            <p>
-              Under the hood, I wired a static GitHub Pages front end to a Cloudflare Worker that securely calls the
-              OpenAI API. The app keeps track of selected products in <code>localStorage</code>, so people can come
-              back later and pick up where they left off.
-            </p>
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/Amazon_logo.svg" alt="Amazon logo" class="project-modal-logo">
+            </div>
+            <div class="project-modal-content">
+              <p>We had productivity targets, but counting items didn't tell us how much work those items required. Someone handling complex products could miss the target while someone handling easier products went right past it.</p>
 
-            <h3>Tech highlights</h3>
-            <ul>
-              <li>HTML, modern CSS, and vanilla JavaScript for the UI and product grid.</li>
-              <li>OpenAI API access proxied through a Cloudflare Worker so my API key never lives in the browser.</li>
-              <li>Conversation history and product context passed to the model for smarter, more personalized responses.</li>
-              <li>Local persistence of selected products using <code>localStorage</code> so sessions feel continuous.</li>
-            </ul>
+              <p>I worked with preparation and styling leads to develop standards based on the complexity of the work, using existing targets and observed processing times. Then I built an Excel and VBA prototype using barcode scanners to put that approach into practice. Employees scanned a complexity category, and we audited those selections to keep the measurements useful.</p>
 
-            <div class="project-links">
-              <a href="https://vader941.github.io/09-prj-loreal-routine-builder/" class="btn" target="_blank" rel="noopener">View Live Site</a>
-              <a href="https://github.com/Vader941/09-prj-loreal-routine-builder" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              <p>The prototype informed a web application adopted by 108 studios globally. Development and management determined how to automate complexity classification using product catalog data. I worked with developers to keep the productivity calculations adaptable because different studios handled different product lines and needed their own standards.</p>
+
+              <p>The resulting data supported analysis through Tableau. Combined with incoming-item forecasts from another process, it helped teams plan capacity around the mix of work coming in. It also helped identify patterns and workflow bottlenecks. The initial focus was studio and department performance; individual performance tracking developed later.</p>
+
+              <p class="project-case-study-skills">Excel · VBA · Requirements Gathering · Business Process Analysis · Tableau</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-modal project-modal--case-study" id="modal-inbound-outbound-automation" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-inbound-outbound-automation-title">
+      <div class="project-modal-inner">
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
+        </div>
+        <div class="project-modal-scroll" tabindex="0">
+          <div class="project-modal-header">
+            <h2 id="modal-inbound-outbound-automation-title">Inbound and Outbound Automation</h2>
+            <p class="modal-subtitle">Faster receiving, fewer errors, and checks before items returned to warehouse inventory.</p>
+          </div>
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/Amazon_logo.svg" alt="Amazon logo" class="project-modal-logo">
+            </div>
+            <div class="project-modal-content">
+              <p>An item arriving for product imaging needed more than a receiving scan. Employees had to move inventory between virtual holding bins, check ownership and inventory status, look up imaging requirements and request notes, and receive the item into an imaging project. That meant working across several intranet screens and tools.</p>
+
+              <p>I built an inbound tool that brought those steps together. An employee could scan the item once, and the application gathered the information and performed the system actions in the background. It then showed where the item needed to go physically, based on ownership and product department.</p>
+
+              <p>The difference was immediately noticeable. Manually processing an incoming item could take roughly two to five minutes, depending on ownership, request notes, and other complications. With the tool, most items took about eight to fifteen seconds. Employees spent less time clicking through systems and could keep the physical work moving.</p>
+
+              <p>When something couldn't be processed normally, the tool alerted the employee and emailed the person responsible for resolving it. The item could be set aside for research while that person investigated, sometimes without needing it in hand. It worked as a practical exception-handling system alongside the automated process.</p>
+
+              <p>The outbound tool handled the return to warehouse inventory and closed the imaging project. It checked that completed images were present and looked for flags in a separate database. If someone had identified a problem while an item was waiting to be repackaged, they could flag it rather than search through hundreds of items. The tool caught it at outbound and directed the employee to the person who needed it.</p>
+
+              <p>Together, these tools helped reduce the studio's measured defect rate from about 2.3% to 0.05%. That measurement covered inbound and outbound, where the studio's work connected with warehouse inventory.</p>
+
+              <p class="project-case-study-skills">Excel · VBA · Process Automation · Data Validation · Business Process Improvement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-modal project-modal--case-study" id="modal-stock-trading-capstone" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-stock-trading-capstone-title">
+      <div class="project-modal-inner">
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
+        </div>
+        <div class="project-modal-scroll" tabindex="0">
+          <div class="project-modal-header">
+            <h2 id="modal-stock-trading-capstone-title">Stock Trading Capstone</h2>
+            <p class="modal-subtitle">An ongoing three-person Information Technology capstone at Arizona State University.</p>
+          </div>
+          <div class="project-modal-body">
+            <div class="project-modal-content">
+              <p>I lead a three-person team building a mock stock trading system in Django. The application brings together accounts, simulated stock prices, buying and selling, portfolio tracking, and transaction history.</p>
+
+              <p>My role includes turning the project scope into requirements and a system design, breaking the work into assignments, and coordinating how the pieces come together. As development progresses, I review pull requests, help teammates work through issues, and check that our implementation stays consistent with the design.</p>
+
+              <p>I also contribute code, including the market simulation, price history, and market exception calendar. A big part of the work is making sure features developed by different people follow the same rules and work together as one system.</p>
+
+              <p>The project is ongoing as part of my Information Technology capstone at Arizona State University.</p>
+
+              <p class="project-case-study-skills">Requirements Analysis · Systems Analysis · Project Management · Team Leadership · Django · Python</p>
+              <div class="project-links">
+                <a class="btn btn-secondary" href="https://github.com/Vader941/ift401-team2-capstone" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'Oréal modal -->
+    <section class="project-modal" id="modal-loreal" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-loreal-title">
+      <div class="project-modal-inner">
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
+        </div>
+        <div class="project-modal-scroll" tabindex="0">
+
+          <div class="project-modal-header">
+            <h2 id="modal-loreal-title">L’Oréal Beauty Routines</h2>
+            <p class="modal-subtitle">AI-powered routine builder and product advisor</p>
+          </div>
+
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/loreal.jpg" alt="Loreal project home screen" class="project-modal-image">
+            </div>
+            <div class="project-modal-content">
+              <p>
+                L’Oréal Beauty Routines lets visitors build a skincare or beauty routine around real products and then
+                chat with a personal beauty advisor powered by OpenAI. Users can filter products by category, select the
+                ones they care about, and ask detailed questions about when and how to use everything together.
+              </p>
+              <p>
+                Under the hood, I wired a static GitHub Pages front end to a Cloudflare Worker that securely calls the
+                OpenAI API. The app keeps track of selected products in <code>localStorage</code>, so people can come
+                back later and pick up where they left off.
+              </p>
+
+              <h3>Tech highlights</h3>
+              <ul>
+                <li>HTML, modern CSS, and vanilla JavaScript for the UI and product grid.</li>
+                <li>OpenAI API access proxied through a Cloudflare Worker so my API key never lives in the browser.</li>
+                <li>Conversation history and product context passed to the model for smarter, more personalized responses.</li>
+                <li>Local persistence of selected products using <code>localStorage</code> so sessions feel continuous.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://vader941.github.io/09-prj-loreal-routine-builder/" class="btn" target="_blank" rel="noopener">View Live Site</a>
+                <a href="https://github.com/Vader941/09-prj-loreal-routine-builder" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -151,43 +314,47 @@
     </section>
 
     <!-- NASA modal -->
-    <section class="project-modal" id="modal-nasa" role="dialog" aria-modal="true" aria-labelledby="modal-nasa-title">
+    <section class="project-modal" id="modal-nasa" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-nasa-title">
       <div class="project-modal-inner">
-        <button class="project-modal-close" type="button" data-modal-close>
-          <span class="visually-hidden">Close</span> ✕
-        </button>
-
-        <div class="project-modal-header">
-          <h2 id="modal-nasa-title">Space Explorer</h2>
-          <p class="modal-subtitle">Daily images and facts from NASA’s archive</p>
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
         </div>
+        <div class="project-modal-scroll" tabindex="0">
 
-        <div class="project-modal-body">
-          <div class="project-modal-media">
-            <img src="images/nasa.jpg" alt="NASA project home screen" class="project-modal-image">
+          <div class="project-modal-header">
+            <h2 id="modal-nasa-title">Space Explorer</h2>
+            <p class="modal-subtitle">Daily images and facts from NASA’s archive</p>
           </div>
-          <div class="project-modal-content">
-            <p>
-              Space Explorer pulls in NASA’s Astronomy Picture of the Day over a custom date range and presents it in a clean,
-              readable gallery. Set your dates, then scroll through high-resolution imagery with the official explanations
-              alongside. You can even check what NASA published on your birthday.
-            </p>
-            <p>
-              This project was my way of getting comfortable with third-party APIs, error handling, and building a UI that feels
-              good whether you are on a laptop or a phone.
-            </p>
 
-            <h3>Tech highlights</h3>
-            <ul>
-              <li>Fetches imagery and metadata from the official NASA API.</li>
-              <li>Responsive layout that adapts from a single-column mobile view to a richer desktop layout.</li>
-              <li>Date-range selection with basic validation and friendly error messages.</li>
-              <li>Hosted on GitHub Pages, using a Cloudflare Worker where needed to keep keys safe.</li>
-            </ul>
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/nasa.jpg" alt="NASA project home screen" class="project-modal-image">
+            </div>
+            <div class="project-modal-content">
+              <p>
+                Space Explorer pulls in NASA’s Astronomy Picture of the Day over a custom date range and presents it in a clean,
+                readable gallery. Set your dates, then scroll through high-resolution imagery with the official explanations
+                alongside. You can even check what NASA published on your birthday.
+              </p>
+              <p>
+                This project was my way of getting comfortable with third-party APIs, error handling, and building a UI that feels
+                good whether you are on a laptop or a phone.
+              </p>
 
-            <div class="project-links">
-              <a href="https://vader941.github.io/07-nasa-space-explorer/" class="btn" target="_blank" rel="noopener">View Live Site</a>
-              <a href="https://github.com/Vader941/07-nasa-space-explorer" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              <h3>Tech highlights</h3>
+              <ul>
+                <li>Fetches imagery and metadata from the official NASA API.</li>
+                <li>Responsive layout that adapts from a single-column mobile view to a richer desktop layout.</li>
+                <li>Date-range selection with basic validation and friendly error messages.</li>
+                <li>Hosted on GitHub Pages, using a Cloudflare Worker where needed to keep keys safe.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://vader941.github.io/07-nasa-space-explorer/" class="btn" target="_blank" rel="noopener">View Live Site</a>
+                <a href="https://github.com/Vader941/07-nasa-space-explorer" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -195,42 +362,46 @@
     </section>
 
     <!-- Charity Water modal -->
-    <section class="project-modal" id="modal-charity" role="dialog" aria-modal="true" aria-labelledby="modal-charity-title">
+    <section class="project-modal" id="modal-charity" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-charity-title">
       <div class="project-modal-inner">
-        <button class="project-modal-close" type="button" data-modal-close>
-          <span class="visually-hidden">Close</span> ✕
-        </button>
-
-        <div class="project-modal-header">
-          <h2 id="modal-charity-title">Pipeline to Hope</h2>
-          <p class="modal-subtitle">Awareness-driven puzzle game for clean water</p>
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
         </div>
+        <div class="project-modal-scroll" tabindex="0">
 
-        <div class="project-modal-body">
-          <div class="project-modal-media">
-            <img src="images/charity.jpg" alt="Charity Water project home screen" class="project-modal-image">
+          <div class="project-modal-header">
+            <h2 id="modal-charity-title">Pipeline to Hope</h2>
+            <p class="modal-subtitle">Awareness-driven puzzle game for clean water</p>
           </div>
-          <div class="project-modal-content">
-            <p>
-              Pipeline to Hope is a timed pipe-connecting game built for Charity: Water. The goal is simple:
-              connect the pipes and get clean water to the village before the clock runs out. Behind the scenes,
-              there is grid logic, collision checking, and state management doing the work.
-            </p>
-            <p>
-              I built this as a prototype to explore how simple games can support education and awareness, and to
-              stretch my JavaScript skills beyond basic forms and DOM manipulation.
-            </p>
 
-            <h3>Tech highlights</h3>
-            <ul>
-              <li>Custom game loop and board logic written in vanilla JavaScript.</li>
-              <li>Responsive layout so the game is playable on both desktop and mobile.</li>
-              <li>Configurable difficulty and timing so the experience can be tuned.</li>
-            </ul>
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/charity.jpg" alt="Charity Water project home screen" class="project-modal-image">
+            </div>
+            <div class="project-modal-content">
+              <p>
+                Pipeline to Hope is a timed pipe-connecting game built for Charity: Water. The goal is simple:
+                connect the pipes and get clean water to the village before the clock runs out. Behind the scenes,
+                there is grid logic, collision checking, and state management doing the work.
+              </p>
+              <p>
+                I built this as a prototype to explore how simple games can support education and awareness, and to
+                stretch my JavaScript skills beyond basic forms and DOM manipulation.
+              </p>
 
-            <div class="project-links">
-              <a href="https://vader941.github.io/prj_charity_water_game_proto2/" class="btn" target="_blank" rel="noopener">Play the Prototype</a>
-              <a href="https://github.com/Vader941/prj_charity_water_game_proto2" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              <h3>Tech highlights</h3>
+              <ul>
+                <li>Custom game loop and board logic written in vanilla JavaScript.</li>
+                <li>Responsive layout so the game is playable on both desktop and mobile.</li>
+                <li>Configurable difficulty and timing so the experience can be tuned.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://vader941.github.io/prj_charity_water_game_proto2/" class="btn" target="_blank" rel="noopener">Play the Prototype</a>
+                <a href="https://github.com/Vader941/prj_charity_water_game_proto2" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -238,42 +409,46 @@
     </section>
 
     <!-- Mini Arcade modal -->
-    <section class="project-modal" id="modal-arcade" role="dialog" aria-modal="true" aria-labelledby="modal-arcade-title">
+    <section class="project-modal" id="modal-arcade" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-arcade-title">
       <div class="project-modal-inner">
-        <button class="project-modal-close" type="button" data-modal-close>
-          <span class="visually-hidden">Close</span> ✕
-        </button>
-
-        <div class="project-modal-header">
-          <h2 id="modal-arcade-title">Mini Games Arcade</h2>
-          <p class="modal-subtitle">A playground of JavaScript mini-games</p>
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
         </div>
+        <div class="project-modal-scroll" tabindex="0">
 
-        <div class="project-modal-body">
-          <div class="project-modal-media">
-            <img src="images/minigame.jpg" alt="Mini games project home screen" class="project-modal-image">
+          <div class="project-modal-header">
+            <h2 id="modal-arcade-title">Mini Games Arcade</h2>
+            <p class="modal-subtitle">A playground of JavaScript mini-games</p>
           </div>
-          <div class="project-modal-content">
-            <p>
-              The Mini Games Arcade is exactly what it sounds like — a collection of quick games I built to keep my
-              JavaScript skills sharp. It includes small experiences that focus on input handling, basic physics,
-              randomization, and clean UI feedback.
-            </p>
-            <p>
-              This is my “sandbox” project: a safe place to try ideas, refactor code, and practice writing logic that is
-              easy to reason about when things get fast and chaotic on screen.
-            </p>
 
-            <h3>Tech highlights</h3>
-            <ul>
-              <li>Multiple self-contained JavaScript games under one consistent UI.</li>
-              <li>Reusable components for buttons, score panels, and layout.</li>
-              <li>Responsive design tweaks for comfortable play on laptops and tablets.</li>
-            </ul>
+          <div class="project-modal-body">
+            <div class="project-modal-media">
+              <img src="images/minigame.jpg" alt="Mini games project home screen" class="project-modal-image">
+            </div>
+            <div class="project-modal-content">
+              <p>
+                The Mini Games Arcade is exactly what it sounds like — a collection of quick games I built to keep my
+                JavaScript skills sharp. It includes small experiences that focus on input handling, basic physics,
+                randomization, and clean UI feedback.
+              </p>
+              <p>
+                This is my “sandbox” project: a safe place to try ideas, refactor code, and practice writing logic that is
+                easy to reason about when things get fast and chaotic on screen.
+              </p>
 
-            <div class="project-links">
-              <a href="https://vader941.github.io/minigame/" class="btn" target="_blank" rel="noopener">Visit the Arcade</a>
-              <a href="https://github.com/Vader941/minigame" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              <h3>Tech highlights</h3>
+              <ul>
+                <li>Multiple self-contained JavaScript games under one consistent UI.</li>
+                <li>Reusable components for buttons, score panels, and layout.</li>
+                <li>Responsive design tweaks for comfortable play on laptops and tablets.</li>
+              </ul>
+
+              <div class="project-links">
+                <a href="https://vader941.github.io/minigame/" class="btn" target="_blank" rel="noopener">Visit the Arcade</a>
+                <a href="https://github.com/Vader941/minigame" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -281,65 +456,69 @@
     </section>
 
     <!-- Works in Progress modal -->
-    <section class="project-modal" id="modal-wip" role="dialog" aria-modal="true" aria-labelledby="modal-wip-title">
+    <section class="project-modal" id="modal-wip" hidden inert role="dialog" aria-modal="true" aria-labelledby="modal-wip-title">
       <div class="project-modal-inner">
-        <button class="project-modal-close" type="button" data-modal-close>
-          <span class="visually-hidden">Close</span> ✕
-        </button>
-
-        <div class="project-modal-header">
-          <h2 id="modal-wip-title">Works in Progress</h2>
-          <p class="modal-subtitle">Projects that are still evolving as I learn</p>
+        <div class="project-modal-toolbar">
+          <button class="project-modal-close" type="button" data-modal-close aria-label="Close">
+            <span class="visually-hidden">Close</span> ✕
+          </button>
         </div>
+        <div class="project-modal-scroll" tabindex="0">
 
-        <div class="project-modal-body">
-          <div class="project-modal-content project-modal-content--full">
-            <p>
-              These projects are active work in progress — I touch them as I have time and as new classes give me better
-              ideas for how to build them. They are not “class assignments” as much as long-running experiments that
-              grow with my skills.
-            </p>
+          <div class="project-modal-header">
+            <h2 id="modal-wip-title">Works in Progress</h2>
+            <p class="modal-subtitle">Projects that are still evolving as I learn</p>
+          </div>
 
-            <div class="wip-project">
-              <h3>Oregon Trail Fan Build</h3>
+          <div class="project-modal-body">
+            <div class="project-modal-content project-modal-content--full">
               <p>
-                A modern spin on the classic Oregon Trail style of game, focused on systems design, data-driven events,
-                and thoughtful difficulty tuning. It is a place where I experiment with inventory systems, random events,
-                and long-form game loops.
+                These projects are active work in progress — I touch them as I have time and as new classes give me better
+                ideas for how to build them. They are not “class assignments” as much as long-running experiments that
+                grow with my skills.
               </p>
-              <p class="wip-links">
-                <a href="https://github.com/Vader941/prj_Oregon_Trail_fan_build" target="_blank" rel="noopener">View on GitHub</a>
+
+              <div class="wip-project">
+                <h3>Oregon Trail Fan Build</h3>
+                <p>
+                  A modern spin on the classic Oregon Trail style of game, focused on systems design, data-driven events,
+                  and thoughtful difficulty tuning. It is a place where I experiment with inventory systems, random events,
+                  and long-form game loops.
+                </p>
+                <p class="wip-links">
+                  <a class="btn btn-secondary" href="https://github.com/Vader941/prj_Oregon_Trail_fan_build" target="_blank" rel="noopener">View on GitHub</a>
+                </p>
+              </div>
+
+              <div class="wip-project">
+                <h3>What Can I Cook?</h3>
+                <p>
+                  A recipe helper that looks at what you already have on hand and suggests meals instead of just listing
+                  thousands of unrelated recipes. The goal is to combine ingredient tracking, appliance constraints, and
+                  budget-friendly ideas into one practical web app.
+                </p>
+                <p class="wip-links">
+                  <a class="btn btn-secondary" href="https://github.com/Vader941/prj-WhatCanICook" target="_blank" rel="noopener">View on GitHub</a>
+                </p>
+              </div>
+
+              <div class="wip-project">
+                <h3>Visual Daily Scheduler</h3>
+                <p>
+                  A drag-and-drop visual schedule designed with neurodivergent kids in mind. Tasks become picture-based
+                  tiles that can be arranged into a day plan, with time-based constraints and conflict warnings. This is
+                  where I explore React, Vite, and more advanced layout logic.
+                </p>
+                <p class="wip-links">
+                  <a class="btn btn-secondary" href="https://github.com/Vader941/prj-daily-visual-schedule" target="_blank" rel="noopener">View on GitHub</a>
+                </p>
+              </div>
+
+              <p class="wip-note">
+                All three are intentionally still under construction. If you want to talk about the architecture or my
+                plans for any of them, I’m always happy to walk through the repos.
               </p>
             </div>
-
-            <div class="wip-project">
-              <h3>What Can I Cook?</h3>
-              <p>
-                A recipe helper that looks at what you already have on hand and suggests meals instead of just listing
-                thousands of unrelated recipes. The goal is to combine ingredient tracking, appliance constraints, and
-                budget-friendly ideas into one practical web app.
-              </p>
-              <p class="wip-links">
-                <a href="https://github.com/Vader941/prj-WhatCanICook" target="_blank" rel="noopener">View on GitHub</a>
-              </p>
-            </div>
-
-            <div class="wip-project">
-              <h3>Visual Daily Scheduler</h3>
-              <p>
-                A drag-and-drop visual schedule designed with neurodivergent kids in mind. Tasks become picture-based
-                tiles that can be arranged into a day plan, with time-based constraints and conflict warnings. This is
-                where I explore React, Vite, and more advanced layout logic.
-              </p>
-              <p class="wip-links">
-                <a href="https://github.com/Vader941/prj-daily-visual-schedule" target="_blank" rel="noopener">View on GitHub</a>
-              </p>
-            </div>
-
-            <p class="wip-note">
-              All three are intentionally still under construction. If you want to talk about the architecture or my
-              plans for any of them, I’m always happy to walk through the repos.
-            </p>
           </div>
         </div>
       </div>
@@ -348,7 +527,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+      <p>© <span id="year"></span> Nathan Able.</p>
+      <p class="project-trademark">Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates. Their use identifies work completed during my employment at Amazon and does not imply sponsorship or endorsement.</p>
     </div>
   </footer>
 

@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nathan Able — Home</title>
+  <title>Nathan Able | Business Systems Analysis</title>
   <!-- SEO description -->
-  <meta name="description" content="Builder. Student. Developer. Real problems turned into clean, working code.">
+  <meta name="description" content="I’m Nathan Able. I work through operational problems and build practical tools to help solve them. My next chapter is business systems analysis.">
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Nathan Able | IT Student & Developer">
-  <meta property="og:description" content="Builder. Student. Developer. Real problems turned into clean, working code.">
+  <meta property="og:title" content="Nathan Able | Business Systems Analysis">
+  <meta property="og:description" content="I’m Nathan Able. I work through operational problems and build practical tools to help solve them. My next chapter is business systems analysis.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vader941.dev/">
   <meta property="og:image" content="https://vader941.dev/images/og-card-nathan-able.png">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nathan Able | IT Student & Developer">
-  <meta name="twitter:description" content="Builder. Student. Developer. Real problems turned into clean, working code.">
+  <meta name="twitter:title" content="Nathan Able | Business Systems Analysis">
+  <meta name="twitter:description" content="I’m Nathan Able. I work through operational problems and build practical tools to help solve them. My next chapter is business systems analysis.">
   <meta name="twitter:image" content="https://vader941.dev/images/og-card-nathan-able.png">
 
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -33,7 +33,7 @@
       <ul id="nav-links">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Selected Work</a></li>
         <li><a href="tech.html">Tech</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -44,11 +44,12 @@
 
   <main id="main">
     <!-- HERO with circular before/after slider -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">Builder • Student • Developer</h1>
-          <p class="hero-subtitle">Real problems → clean, working code.</p>
+          <p class="hero-label">Nathan Able · Business Systems Analysis</p>
+          <h1 id="hero-title" class="hero-title">The numbers didn’t tell the whole story.</h1>
+          <p class="hero-subtitle">So I built a better way to measure the work.</p>
         </div>
 
         <!-- Circular compare component -->
@@ -74,10 +75,37 @@
             aria-label="Reveal amount (left shows professional, right shows cyborg)">
         </div>
 
-        <noscript>
+        <p class="hero-introduction">I’m Nathan Able. I work through operational problems and build practical tools to help solve them. My next chapter is business systems analysis.</p>
+
+        <div class="hero-actions">
+          <a class="hero-button hero-button-primary" href="projects.html">Explore My Work</a>
+          <a class="hero-button hero-button-secondary" href="about.html">More About Me</a>
+        </div>
+
+        <noscript class="hero-fallback">
           <p><strong>Note:</strong> JavaScript is disabled. Showing the professional photo:</p>
           <img src="images/me.png" alt="Professional portrait of Nathan" class="fallback-portrait">
         </noscript>
+      </div>
+    </section>
+
+    <section class="selected-work" aria-labelledby="selected-work-title">
+      <div class="container">
+        <h2 id="selected-work-title">Selected Work</h2>
+        <ul class="work-previews">
+          <li>
+            <h3><a href="projects.html#productivity-tracking">Productivity Tracking</a></h3>
+            <p>An approach adopted across 108 studios.</p>
+          </li>
+          <li>
+            <h3><a href="projects.html#inbound-outbound-automation">Inbound and Outbound Automation</a></h3>
+            <p>Defects reduced from about 2.3% to 0.05%.</p>
+          </li>
+          <li>
+            <h3><a href="projects.html#stock-trading-capstone">Stock Trading Capstone</a></h3>
+            <p>Bringing a three-person team’s work together.</p>
+          </li>
+        </ul>
       </div>
     </section>
   
@@ -85,7 +113,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Nathan Able. LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</p>
+      <p>© <span id="year"></span> Nathan Able.</p>
     </div>
   </footer>
 

@@ -1,59 +1,99 @@
 /* =========================================================
-   home.css — Home page specific styles (bold statement update)
+   home.css — Home page specific styles
    ========================================================= */
 
-/* ===== Hero layout (bold statement style) ===== */
+/* ===== Hero layout ===== */
 .hero {
-  padding-top: 4rem;
-  padding-bottom: 3.5rem;
+  padding: clamp(2rem, 5vw, 4rem) 0 3rem;
 }
 
 .hero .container {
   display: grid;
-  gap: 1.75rem;
+  grid-template-areas: "headline" "portrait" "introduction" "actions" "fallback";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
   align-items: center;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
 }
 
+.hero-content { grid-area: headline; min-width: 0; }
+.hero-label { margin: 0 0 1rem; color: var(--muted); font-size: .95rem; }
+
 .hero-title {
-  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  font-size: clamp(2.25rem, 4vw + .5rem, 3.75rem);
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.025em;
   line-height: 1.15;
-  margin: 0 0 0.6rem;
+  margin: 0 0 1rem;
   color: var(--text);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 1.5vw + 0.4rem, 1.5rem);
-  font-weight: 500;
-  color: var(--muted);
-  margin: 0 0 1.2rem;
+  font-size: clamp(1.35rem, 2vw + .4rem, 1.9rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--brand);
+  margin: 0;
 }
+
+.hero-introduction {
+  grid-area: introduction;
+  margin: 0;
+  max-width: 58ch;
+  font-size: 1.0625rem;
+}
+.hero-actions { grid-area: actions; display: flex; flex-wrap: wrap; gap: .85rem; }
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .7rem 1.1rem;
+  border: 1px solid var(--brand);
+  border-radius: .5rem;
+  font-weight: 650;
+}
+.hero-button-primary { color: var(--bg); background: var(--brand); }
+.hero-button-secondary { color: var(--brand); }
+.hero-button:hover { text-decoration: underline; text-underline-offset: .2em; }
+.hero-fallback { grid-area: fallback; }
 
 /* On larger screens, place text and portrait side-by-side */
 @media (min-width: 820px) {
   .hero .container {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 3.5rem;
-    text-align: left;
-    justify-items: stretch;
-  }
-  .hero-content {
-    order: 1;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-areas: "headline portrait" "introduction portrait" "actions portrait" "fallback fallback";
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    row-gap: 1.5rem;
   }
   .face-compare {
     justify-self: end;
   }
 }
 
+.selected-work { padding: 0 0 3rem; }
+.selected-work .container { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+.selected-work h2 { margin: 0 0 1.25rem; font-size: 1.5rem; }
+.work-previews {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.work-previews h3 { margin: 0 0 .35rem; font-size: 1.125rem; }
+.work-previews p { margin: 0; color: var(--muted); }
+@media (min-width: 820px) {
+  .work-previews { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+}
+
 /* =========================================================
    Circular before/after portrait
    ========================================================= */
 .face-compare {
-  width: clamp(240px, 45vw, 420px);
+  grid-area: portrait;
+  justify-self: center;
+  width: min(100%, clamp(240px, 45vw, 420px));
   aspect-ratio: 1 / 1;
   position: relative;
   border-radius: 50%;
@@ -104,9 +144,9 @@
   cursor: ew-resize;
 }
 
-.face-compare .slider:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: -4px;
+.face-compare:has(.slider:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
